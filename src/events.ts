@@ -1,91 +1,91 @@
-import { ObjectId } from "mongodb";
+import { ObjectId } from 'mongodb'
 
 export interface Event {
-  _id: any;
-  clusterTime: any;
+  _id: any
+  clusterTime: any
 }
 
 export interface InsertEvent extends Event {
-  operationType: "insert";
-  fullDocument: any;
+  operationType: 'insert'
+  fullDocument: any
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
   documentKey: {
-    _id: ObjectId;
-  };
+    _id: ObjectId
+  }
 }
 
 export interface UpdateEvent extends Event {
-  operationType: "update";
+  operationType: 'update'
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
   documentKey: {
-    _id: ObjectId;
-  };
+    _id: ObjectId
+  }
   updateDescription: {
     updatedFields: {
-      [field: string]: any;
-    };
-    removedFields: string[];
-  };
+      [field: string]: any
+    }
+    removedFields: string[]
+  }
 }
 
 export interface ReplaceEvent extends Event {
-  operationType: "replace";
-  fullDocument: any;
+  operationType: 'replace'
+  fullDocument: any
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
   documentKey: {
-    _id: ObjectId;
-  };
+    _id: ObjectId
+  }
 }
 
 export interface DeleteEvent extends Event {
-  operationType: "delete";
+  operationType: 'delete'
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
   documentKey: {
-    _id: ObjectId;
-  };
+    _id: ObjectId
+  }
 }
 
 export interface DropEvent extends Event {
-  operationType: "drop";
+  operationType: 'drop'
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
 }
 
 export interface RenameEvent extends Event {
-  operationType: "rename";
+  operationType: 'rename'
   ns: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
   to: {
-    db: string;
-    coll: string;
-  };
+    db: string
+    coll: string
+  }
 }
 
 export interface DropDatabaseEvent extends Event {
-  operationType: "dropDatabase";
+  operationType: 'dropDatabase'
   ns: {
-    db: string;
-  };
+    db: string
+  }
 }
 
 export interface InvalidateEvent extends Event {
-  operationType: "invalidate";
+  operationType: 'invalidate'
 }
 
 export type ChangeEvent =
@@ -96,4 +96,4 @@ export type ChangeEvent =
   | DropEvent
   | RenameEvent
   | DropDatabaseEvent
-  | InvalidateEvent;
+  | InvalidateEvent

@@ -1,15 +1,32 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es6",
+    "declaration": true,
+    "target": "es2017",
     "module": "commonjs",
+    "outDir": "dist",
+    "pretty": true,
+    "noEmitOnError": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "typeRoots": ["node_modules/@types"],
+    "noImplicitAny": false,
     "esModuleInterop": true,
-    "rootDir": "src",
-    "outDir": "build"
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "lib": [
+      "esnext"
+    ]
   },
-  "exclude": ["node_modules"],
-  "include": ["src/index.ts"]
+  "formatCodeOptions": {
+    "identSize": 2,
+    "tabSize": 2
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ]
 }

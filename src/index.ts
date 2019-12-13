@@ -1,2 +1,7 @@
-export * from "./events";
-export * from "./stalker";
+import * as events from './events'
+import { Stalker } from './stalker'
+
+export = {
+  ...events,
+  Stalker,
+}
