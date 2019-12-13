@@ -1,0 +1,17 @@
+{
+  "name": "stalker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giacomo Gregoletto",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mongodb": "^3.3.12",
+    "@types/node": "^12.12.17",
+    "mongodb": "^3.4.0",
+    "typescript": "^3.7.3"
+  }
+}
